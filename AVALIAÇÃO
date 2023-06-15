@@ -1,0 +1,74 @@
+QUESTÃO 1) function isPrime(number) {
+    if (number < 2) {
+      return false;
+    }
+  
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) {
+        return false;
+      }
+    }
+  
+    return true;
+  }
+  
+  function listPrimes() {
+    const primes = [];
+    for (let i = 1; i <= 1000; i++) {
+      if (isPrime(i)) {
+        primes.push(i);
+      }
+    }
+    return primes;
+  }
+  
+  console.log(listPrimes());
+
+
+
+
+
+ QUESTÃO 2) function validatePassword(password) {
+    const regex = /^(?=.[a-z])(?=.[A-Z])(?=.*\d).{8,}$/;
+  
+    if (regex.test(password)) {
+      return 'Senha válida.';
+    } else {
+      return 'Senha inválida.';
+    }
+  }
+  
+  console.log(validatePassword('Abcdefg1')); // Senha válida.
+  console.log(validatePassword('12345678')); // Senha inválida. 
+
+
+
+
+
+  QUESTÃO 3) function factorial(number) {
+    if (number === 0 || number === 1) {
+      return 1;
+    } else {
+      let result = 1;
+      for (let i = 2; i <= number; i++) {
+        result *= i;
+      }
+      return result;
+    }
+  }
+  
+  for (let i = 1; i <= 10; i++) {
+    console.log(`O fatorial de ${i} é: ${factorial(i)}`);
+  }
+
+
+
+
+
+  QUESTÃO 4) function isPerfectSquare(number) {
+    const sqrt = Math.sqrt(number);
+    return Number.isInteger(sqrt);
+  }
+  
+  console.log(isPerfectSquare(25)); // true
+  console.log(isPerfectSquare(37)); // false
